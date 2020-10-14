@@ -28,15 +28,16 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     public void onClick(View click) {
 
         if (click == game) {
+            //fragment instead
             Intent intent = new Intent(this, Game.class);
             startActivity(intent);
         }
         else if (click == settings) {
+            //fragment instead
             Intent intent = new Intent(this, Settings.class);
             startActivity(intent);
         }
 
     }
-
 
 }

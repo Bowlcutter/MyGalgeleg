@@ -4,15 +4,52 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#FFFFFF"
+    android:backgroundTint="#FFFFFF"
     tools:context=".Game">
 
     <Button
-        android:id="@+id/playButt"
+        android:id="@+id/bopIt"
+        android:layout_width="0dp"
+        android:layout_height="55dp"
+        android:layout_marginBottom="222dp"
+        android:background="#A39595"
+        android:text="BOP IT"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <ImageView
+        android:id="@+id/galge"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="333dp"
-        android:text="PLAY"
+        android:layout_marginStart="111dp"
+        android:layout_marginTop="55dp"
+        android:layout_marginEnd="111dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/galge" />
+
+    <EditText
+        android:id="@+id/inLetter"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Skriv dit gæt her, kun ÉT bogstav"
+        android:inputType="text"
+        app:layout_constraintBottom_toTopOf="@+id/bopIt"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/infoText"
+        android:layout_width="333dp"
+        android:layout_height="111dp"
+        android:layout_marginTop="11dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/galge" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

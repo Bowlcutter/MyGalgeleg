@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:foregroundTint="#918A8A"
     tools:context=".MainActivity">
 
     <Button
@@ -24,4 +25,14 @@
         android:text="Settings"
         app:layout_constraintStart_toStartOf="@+id/gameButt"
         app:layout_constraintTop_toBottomOf="@+id/gameButt" />
+
+    <TextView
+        android:id="@+id/welcomeText"
+        android:layout_width="277dp"
+        android:layout_height="144dp"
+        android:layout_marginTop="44dp"
+        android:text="Velkommen til galgeleg appen woohoo :)"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>
