@@ -1,10 +1,10 @@
 package My.galgeleg;
 
 import androidx.appcompat.app.AppCompatActivity;
-
 import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
+import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
@@ -20,6 +20,7 @@ public class Game extends AppCompatActivity implements View.OnClickListener {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_HIDDEN);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_game);
 
@@ -31,6 +32,7 @@ public class Game extends AppCompatActivity implements View.OnClickListener {
         infoText.setText("Hej, her er mit galgeleg" +
                 "\n\nGæt ordet: " + logik.getSynligtOrd());
 
+        bopIt.setOnClickListener(this);
     }
     @Override
     public void onClick(View v) {
@@ -43,13 +45,14 @@ public class Game extends AppCompatActivity implements View.OnClickListener {
         logik.gætBogstav(bogstav);
         inLetter.setText("");
         inLetter.setError(null);
+
         updateScreen();
     }
 
     public void updateScreen() {
 
-        infoText.setText("Gæt: " + logik.getSynligtOrd() +
-                "\nAntal forkerte: " + logik.getAntalForkerteBogstaver() +
+        infoText.setText("Gæt: " + logik.getSynligtOrd());
+        infoText.append("\nAntal forkerte: " + logik.getAntalForkerteBogstaver() +
                 "\n\nDu har gættet på: " + logik.getBrugteBogstaver());
 
         if (logik.getAntalForkerteBogstaver() == 1)
@@ -80,4 +83,5 @@ public class Game extends AppCompatActivity implements View.OnClickListener {
         }
 
     }
+
 }
