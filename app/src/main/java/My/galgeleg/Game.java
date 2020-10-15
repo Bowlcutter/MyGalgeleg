@@ -1,6 +1,8 @@
 package My.galgeleg;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
@@ -17,6 +19,7 @@ public class Game extends AppCompatActivity implements View.OnClickListener {
     EditText inLetter;
     TextView infoText;
     ImageView galge;
+    int forsøg = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,7 +32,8 @@ public class Game extends AppCompatActivity implements View.OnClickListener {
         infoText = findViewById(R.id.infoText);
         galge = findViewById(R.id.galge);
 
-        infoText.setText("Hej, her er mit galgeleg" +
+        infoText.setText("Velkommen til galgelegen :)" +
+                "\nKun små bogstaver!" +
                 "\n\nGæt ordet: " + logik.getSynligtOrd());
 
         bopIt.setOnClickListener(this);
@@ -46,6 +50,7 @@ public class Game extends AppCompatActivity implements View.OnClickListener {
         inLetter.setText("");
         inLetter.setError(null);
 
+        forsøg++;
         updateScreen();
     }
 
@@ -69,17 +74,22 @@ public class Game extends AppCompatActivity implements View.OnClickListener {
             galge.setImageResource(R.drawable.forkert6);
 
         if (logik.erSpilletVundet()) {
-
-            infoText.setTextColor(Color.GREEN);
+            /*infoText.setTextColor(Color.GREEN);
             infoText.setTextSize(33);
             infoText.setBackgroundColor(Color.BLACK);
-            infoText.setText("Winner Winner\nChicken Dinner");
+            infoText.setText("Winner Winner\nChicken Dinner");*/
+
+            Intent intent = new Intent(this, Win.class);
+            intent.putExtra("tries", forsøg);
+            startActivity(intent);
         }
         else if (logik.erSpilletTabt()) {
-            infoText.setTextColor(Color.GREEN);
+            /*infoText.setTextColor(Color.GREEN);
             infoText.setTextSize(33);
             infoText.setBackgroundColor(Color.BLACK);
-            infoText.setText("Ooga booga\nDu tabte\n\nOrdet var: " + logik.getOrdet());
+            infoText.setText("Ooga booga\nDu tabte\n\nOrdet var: " + logik.getOrdet());*/
+
+            
         }
 
     }
