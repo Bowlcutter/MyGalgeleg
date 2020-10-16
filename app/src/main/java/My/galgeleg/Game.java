@@ -1,6 +1,7 @@
 package My.galgeleg;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.Fragment;
 
 import android.content.Intent;
 import android.graphics.Color;
@@ -89,7 +90,7 @@ public class Game extends AppCompatActivity implements View.OnClickListener {
             infoText.setBackgroundColor(Color.BLACK);
             infoText.setText("Ooga booga\nDu tabte\n\nOrdet var: " + logik.getOrdet());*/
 
-            
+
         }
 
     }
