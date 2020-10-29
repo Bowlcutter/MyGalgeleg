@@ -75,24 +75,22 @@ public class Game extends AppCompatActivity implements View.OnClickListener {
             galge.setImageResource(R.drawable.forkert6);
 
         if (logik.erSpilletVundet()) {
-            /*infoText.setTextColor(Color.GREEN);
-            infoText.setTextSize(33);
-            infoText.setBackgroundColor(Color.BLACK);
-            infoText.setText("Winner Winner\nChicken Dinner");*/
 
             Intent intent = new Intent(this, Win.class);
             intent.putExtra("tries", forsøg);
             startActivity(intent);
         }
         else if (logik.erSpilletTabt()) {
-            /*infoText.setTextColor(Color.GREEN);
-            infoText.setTextSize(33);
-            infoText.setBackgroundColor(Color.BLACK);
-            infoText.setText("Ooga booga\nDu tabte\n\nOrdet var: " + logik.getOrdet());*/
 
+            /*getParentFragmentManager().beginTransaction()
+                    .replace(R.id. , new  ())
+                    .addToBackStack(null)
+                    .commit();*/
+            //can i extend both fragment and appcompatactivity somehow?
 
+            Intent intent = new Intent(this, Loss.class);
+            intent.putExtra("Ordet", logik.getOrdet());
+            startActivity(intent);
         }
-
     }
-
 }

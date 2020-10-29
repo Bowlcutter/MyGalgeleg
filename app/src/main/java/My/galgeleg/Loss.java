@@ -1,18 +1,33 @@
 package My.galgeleg;
 
-import android.os.Bundle;
-import androidx.fragment.app.Fragment;
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
+import androidx.appcompat.app.AppCompatActivity;
 
-public class Loss extends Fragment {
+import android.content.Intent;
+import android.os.Bundle;
+import android.view.View;
+import android.widget.TextView;
+
+
+public class Loss extends AppCompatActivity implements View.OnClickListener{
+
+    TextView lossText;
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_loss, container, false);
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_loss);
+
+        lossText = findViewById(R.id.lossText);
+        lossText.setOnClickListener(this);
+
+        lossText.append("\nOrdet var: " + getIntent().getStringExtra("Ordet") +
+                "\n\nTryk på teksten for at gå tilbage");
+
     }
 
+    @Override
+    public void onClick(View v) {
+        Intent intent = new Intent(this, MainActivity.class);
+        startActivity(intent);
+    }
 }

@@ -11,7 +11,7 @@
         android:id="@+id/gameButt"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="278dp"
+        android:layout_marginTop="222dp"
         android:text="Game"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -21,7 +21,7 @@
         android:id="@+id/settingButt"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="77dp"
+        android:layout_marginTop="44dp"
         android:text="Settings"
         app:layout_constraintStart_toStartOf="@+id/gameButt"
         app:layout_constraintTop_toBottomOf="@+id/gameButt" />
@@ -29,7 +29,7 @@
     <TextView
         android:id="@+id/welcomeText"
         android:layout_width="277dp"
-        android:layout_height="144dp"
+        android:layout_height="99dp"
         android:layout_marginTop="44dp"
         android:text="Velkommen til galgeleg appen woohoo :)"
         app:layout_constraintEnd_toEndOf="parent"
