@@ -7,6 +7,7 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.os.Bundle;
+import androidx.preference.PreferenceManager;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.Button;
@@ -44,13 +45,13 @@ public class Game extends AppCompatActivity implements View.OnClickListener {
         bopIt.setOnClickListener(this);
 
         inLetter.setVisibility(View.GONE);
+
     }
     @Override
     public void onClick(View v) {
 
 
         playerName = inName.getText().toString();
-        //gem i pref
         inName.setVisibility(View.GONE);
         inLetter.setVisibility(View.VISIBLE);
 
@@ -99,6 +100,7 @@ public class Game extends AppCompatActivity implements View.OnClickListener {
                     .replace(R.id. , new  ())
                     .addToBackStack(null)
                     .commit();*/
+
             //can i extend both fragment and appcompatactivity somehow?
 
             Intent intent = new Intent(this, Loss.class);

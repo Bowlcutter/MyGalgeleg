@@ -9,12 +9,14 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import java.util.ArrayList;
+
 public class HiscoreRecycler extends RecyclerView.Adapter<HiscoreRecycler.MyViewHolder> {
 
-    String[] data1;
-    String[] data2;
+    ArrayList<String> data1;
+    ArrayList<String> data2;
 
-    public HiscoreRecycler(String[] s1, String[] s2){
+    public HiscoreRecycler(ArrayList s1, ArrayList s2){
         data1 = s1;
         data2 = s2;
     }
@@ -29,17 +31,16 @@ public class HiscoreRecycler extends RecyclerView.Adapter<HiscoreRecycler.MyView
 
     @Override
     public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
-        holder.myText1.setText(data1[position]);
-        holder.myText2.setText(data2[position]);
+        holder.myText1.setText(data1.get(position));
+        holder.myText2.setText(data2.get(position));
     }
 
     @Override
     public int getItemCount() {
-        return data2.length;
+        return data2.size();
     }
 
-    public class MyViewHolder extends RecyclerView.ViewHolder {
-
+    public static class MyViewHolder extends RecyclerView.ViewHolder {
         TextView myText1, myText2;
 
         public MyViewHolder(@NonNull View itemView) {
