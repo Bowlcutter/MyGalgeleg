@@ -43,6 +43,17 @@
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent" />
 
+    <EditText
+        android:id="@+id/inName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Skriv dit spillernavn!"
+        android:inputType="text"
+        app:layout_constraintBottom_toTopOf="@+id/bopIt"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent" />
+
     <TextView
         android:id="@+id/infoText"
         android:layout_width="299dp"

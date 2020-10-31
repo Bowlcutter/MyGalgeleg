@@ -9,7 +9,7 @@ import android.widget.Button;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
-    Button game, settings;
+    Button game, hiscore;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -17,23 +17,21 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         setContentView(R.layout.activity_main);
 
         game = findViewById(R.id.gameButt);
-        settings = findViewById(R.id.settingButt);
+        hiscore = findViewById(R.id.hiscoreButt);
 
         game.setOnClickListener(this);
-        settings.setOnClickListener(this);
+        hiscore.setOnClickListener(this);
 
     }
 
     public void onClick(View click) {
 
         if (click == game) {
-            //mby fragment later
             Intent intent = new Intent(this, Game.class);
             startActivity(intent);
         }
-        else if (click == settings) {
-            //mby fragment later
-            Intent intent = new Intent(this, Settings.class);
+        else if (click == hiscore) {
+            Intent intent = new Intent(this, Hiscore.class);
             startActivity(intent);
         }
 

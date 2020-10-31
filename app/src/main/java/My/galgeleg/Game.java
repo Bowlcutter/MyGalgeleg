@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
@@ -17,10 +18,12 @@ public class Game extends AppCompatActivity implements View.OnClickListener {
 
     Galgelogik logik = new Galgelogik();
     Button bopIt;
-    EditText inLetter;
+    EditText inLetter, inName;
     TextView infoText;
     ImageView galge;
     int forsøg = 0;
+    String playerName;
+    SharedPreferences preferences;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,15 +35,24 @@ public class Game extends AppCompatActivity implements View.OnClickListener {
         inLetter = findViewById(R.id.inLetter);
         infoText = findViewById(R.id.infoText);
         galge = findViewById(R.id.galge);
+        inName = findViewById(R.id.inName);
 
         infoText.setText("Velkommen til galgelegen :)" +
                 "\nKun små bogstaver!" +
                 "\n\nGæt ordet: " + logik.getSynligtOrd());
 
         bopIt.setOnClickListener(this);
+
+        inLetter.setVisibility(View.GONE);
     }
     @Override
     public void onClick(View v) {
+
+
+        playerName = inName.getText().toString();
+        //gem i pref
+        inName.setVisibility(View.GONE);
+        inLetter.setVisibility(View.VISIBLE);
 
         String bogstav = inLetter.getText().toString();
         if (bogstav.length() != 1) {
@@ -78,6 +90,7 @@ public class Game extends AppCompatActivity implements View.OnClickListener {
 
             Intent intent = new Intent(this, Win.class);
             intent.putExtra("tries", forsøg);
+            intent.putExtra("navn", playerName);
             startActivity(intent);
         }
         else if (logik.erSpilletTabt()) {

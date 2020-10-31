@@ -21,7 +21,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".Win" />
-        <activity android:name=".Settings" />
+        <activity android:name=".Hiscore" />
         <activity android:name=".Game" />
         <activity android:name=".MainActivity">
             <intent-filter>

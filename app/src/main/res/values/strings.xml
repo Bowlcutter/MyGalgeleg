@@ -4,4 +4,16 @@
     <string name="dummy_content">DUMMY\nCONTENT</string>
     <string name="title_activity_loss">Loss</string>
 
+    <string-array name="spillere">
+        <item>Andrey</item>
+        <item>Andrey</item>
+        <item>Andrey</item>
+    </string-array>
+
+    <string-array name="spillerscore">
+        <item>5</item>
+        <item>5</item>
+        <item>5</item>
+    </string-array>
+
 </resources>

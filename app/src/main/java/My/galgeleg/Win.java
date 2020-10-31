@@ -3,6 +3,7 @@ package My.galgeleg;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
@@ -13,6 +14,7 @@ public class Win extends AppCompatActivity implements View.OnClickListener{
 
     TextView winText;
     GifImageView winGif;
+    SharedPreferences preferences;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,7 +25,8 @@ public class Win extends AppCompatActivity implements View.OnClickListener{
         winGif = findViewById(R.id.winGif);
         winGif.setOnClickListener(this);
 
-        winText.append("\nForsøg: " + getIntent().getIntExtra("tries", 0) +
+        winText.append(": " + getIntent().getStringExtra("navn") +
+                "\nForsøg: " + getIntent().getIntExtra("tries", 0) +
                 "\n\nTryk på den saftige brød robot!");
 
     }
