@@ -1,4 +1,4 @@
-package My.galgeleg;
+package My.galgeleg.func;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -19,12 +19,19 @@ public class Galgelogik {
     private boolean sidsteBogstavVarKorrekt;
     private boolean spilletErVundet;
     private boolean spilletErTabt;
+    private static Galgelogik instance;
 
-    public Galgelogik() {
+    private Galgelogik() {
         muligeOrd.add("fad");
         nulstil();
     }
 
+    public static Galgelogik getInstance() {
+        if (instance == null) {
+            instance = new Galgelogik();
+        }
+        return instance;
+    }
 
     public ArrayList<String> getBrugteBogstaver() {
         return brugteBogstaver;
@@ -58,7 +65,6 @@ public class Galgelogik {
         return spilletErTabt || spilletErVundet;
     }
 
-
     public void nulstil() {
         brugteBogstaver.clear();
         antalForkerteBogstaver = 0;
@@ -68,7 +74,6 @@ public class Galgelogik {
         ordet = muligeOrd.get(new Random().nextInt(muligeOrd.size()));
         opdaterSynligtOrd();
     }
-
 
     private void opdaterSynligtOrd() {
         synligtOrd = "";
@@ -117,7 +122,6 @@ public class Galgelogik {
         if (spilletErVundet) System.out.println("- SPILLET ER VUNDET");
         System.out.println("---------- ");
     }
-
 
     public static String hentUrl(String url) throws IOException {
         System.out.println("Henter data fra " + url);
@@ -193,4 +197,3 @@ public class Galgelogik {
         nulstil();
     }
 }
-

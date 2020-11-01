@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Hiscore">
+    tools:context=".screens.Hiscore">
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/hiscoreRecycler"
@@ -43,7 +43,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="30dp"
-        android:layout_marginBottom="20dp"
+        android:layout_marginBottom="15dp"
         android:backgroundTint="#000000"
         android:text="Tilbage"
         android:textColor="#FFFFFF"

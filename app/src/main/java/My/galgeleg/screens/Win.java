@@ -1,4 +1,4 @@
-package My.galgeleg;
+package My.galgeleg.screens;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.preference.PreferenceManager;
@@ -9,8 +9,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
 
-import java.util.Map;
-
+import My.galgeleg.R;
 import pl.droidsonroids.gif.GifImageView;
 
 public class Win extends AppCompatActivity implements View.OnClickListener{
@@ -28,11 +27,11 @@ public class Win extends AppCompatActivity implements View.OnClickListener{
         winGif = findViewById(R.id.winGif);
         winGif.setOnClickListener(this);
 
-        //får spillerens navn og forsøg fra game klassen
+        // får spillerens navn og forsøg fra game klassen
         String spillerNavn = getIntent().getStringExtra("navn");
         int spillerScore = getIntent().getIntExtra("tries", 0);
 
-        //gemmer spilleren navn og tilhørende score i shared prefs
+        // gemmer spilleren navn og tilhørende score i shared prefs
         preferences = PreferenceManager.getDefaultSharedPreferences(this);
         preferences.edit().putInt(spillerNavn, spillerScore).apply();
 

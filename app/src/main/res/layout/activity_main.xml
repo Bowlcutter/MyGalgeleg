@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:foregroundTint="#918A8A"
-    tools:context=".MainActivity">
+    tools:context=".screens.MainActivity">
 
     <Button
         android:id="@+id/gameButt"

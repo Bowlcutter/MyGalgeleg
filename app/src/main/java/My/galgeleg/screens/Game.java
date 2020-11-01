@@ -1,13 +1,10 @@
-package My.galgeleg;
+package My.galgeleg.screens;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.fragment.app.Fragment;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.graphics.Color;
 import android.os.Bundle;
-import androidx.preference.PreferenceManager;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.Button;
@@ -15,16 +12,18 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import My.galgeleg.R;
+import My.galgeleg.func.Galgelogik;
+
 public class Game extends AppCompatActivity implements View.OnClickListener {
 
-    Galgelogik logik = new Galgelogik();
+    private Galgelogik logik;
     Button bopIt;
     EditText inLetter, inName;
     TextView infoText;
     ImageView galge;
     int forsøg = 0;
     String playerName;
-    SharedPreferences preferences;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,14 +31,17 @@ public class Game extends AppCompatActivity implements View.OnClickListener {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_game);
 
+        // får galgelogikkens instance til brug af klassens data/metoder
+        logik = Galgelogik.getInstance();
+
         bopIt = findViewById(R.id.bopIt);
         inLetter = findViewById(R.id.inLetter);
         infoText = findViewById(R.id.infoText);
         galge = findViewById(R.id.galge);
         inName = findViewById(R.id.inName);
 
-        infoText.setText("Velkommen til galgelegen :)" +
-                "\nKun små bogstaver!" +
+        infoText.setText("Velkommen til galgelegen!" +
+                "\nKun små bogstaver til gæt!" +
                 "\n\nGæt ordet: " + logik.getSynligtOrd());
 
         bopIt.setOnClickListener(this);

@@ -1,4 +1,4 @@
-package My.galgeleg;
+package My.galgeleg.screens;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.preference.PreferenceManager;
@@ -8,12 +8,14 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 
 import java.util.ArrayList;
 import java.util.Map;
+
+import My.galgeleg.util.HiscoreRecycler;
+import My.galgeleg.R;
 
 public class Hiscore extends AppCompatActivity implements View.OnClickListener{
 
@@ -34,13 +36,15 @@ public class Hiscore extends AppCompatActivity implements View.OnClickListener{
 
         preferences = PreferenceManager.getDefaultSharedPreferences(this);
 
-        //for taget fra https://stackoverflow.com/questions/22089411/how-to-get-all-keys-of-sharedpreferences-programmatically-in-android
+        // for taget fra https://stackoverflow.com/questions/22089411/how-to-get-all-keys-of-sharedpreferences-programmatically-in-android
         Map<String, ?> allEntries = preferences.getAll();
         for (Map.Entry<String, ?> entry : allEntries.entrySet()) {
             spiller.add((entry.getKey()));
             score.add(entry.getValue().toString());
-        }
-        //data fra win klassen bliver brugt til high score recycleren
+        }// vil senere hen finde ud af hvordan jeg sorter high score listen så de
+        // viser bedste scorere først etc. og passer med de tilhørende navne
+
+        // data fra sharedprefs bliver brugt til high score recycleren
         HiscoreRecycler adapter = new HiscoreRecycler(spiller, score);
         hiscoreRecycler.setAdapter(adapter);
         hiscoreRecycler.setLayoutManager(new LinearLayoutManager(this));
