@@ -33,6 +33,7 @@ public class Game extends AppCompatActivity implements View.OnClickListener {
 
         // får galgelogikkens instance til brug af klassens data/metoder
         logik = Galgelogik.getInstance();
+        logik.clearInstance();
 
         bopIt = findViewById(R.id.bopIt);
         inLetter = findViewById(R.id.inLetter);
@@ -94,6 +95,7 @@ public class Game extends AppCompatActivity implements View.OnClickListener {
             Intent intent = new Intent(this, Win.class);
             intent.putExtra("tries", forsøg);
             intent.putExtra("navn", playerName);
+            finish();
             startActivity(intent);
         }
         else if (logik.erSpilletTabt()) {
@@ -107,6 +109,7 @@ public class Game extends AppCompatActivity implements View.OnClickListener {
 
             Intent intent = new Intent(this, Loss.class);
             intent.putExtra("Ordet", logik.getOrdet());
+            finish();
             startActivity(intent);
         }
     }

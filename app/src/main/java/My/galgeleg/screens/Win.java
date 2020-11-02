@@ -23,7 +23,7 @@ public class Win extends AppCompatActivity implements View.OnClickListener{
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_win);
 
-        winText = findViewById(R.id.winText);
+        winText = findViewById(R.id.winnerText);
         winGif = findViewById(R.id.winGif);
         winGif.setOnClickListener(this);
 
@@ -42,6 +42,7 @@ public class Win extends AppCompatActivity implements View.OnClickListener{
     @Override
     public void onClick(View v) {
         Intent intent = new Intent(this, MainActivity.class);
+        finish();
         startActivity(intent);
     }
 }

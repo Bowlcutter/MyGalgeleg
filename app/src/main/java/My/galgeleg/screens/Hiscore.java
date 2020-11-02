@@ -55,6 +55,7 @@ public class Hiscore extends AppCompatActivity implements View.OnClickListener{
 
         if (v == backButt) {
             Intent intent = new Intent(this, MainActivity.class);
+            finish();
             startActivity(intent);
         }
     }

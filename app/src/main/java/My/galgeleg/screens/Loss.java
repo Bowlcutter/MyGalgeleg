@@ -30,6 +30,7 @@ public class Loss extends AppCompatActivity implements View.OnClickListener{
     @Override
     public void onClick(View v) {
         Intent intent = new Intent(this, MainActivity.class);
+        finish();
         startActivity(intent);
     }
 }

@@ -33,6 +33,10 @@ public class Galgelogik {
         return instance;
     }
 
+    public void clearInstance() {
+        instance = null;
+    }
+
     public ArrayList<String> getBrugteBogstaver() {
         return brugteBogstaver;
     }
